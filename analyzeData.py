@@ -6,7 +6,8 @@ df = pd.read_csv('./seattle-weather.csv')
 
 weather_gb = df.groupby(['weather']).mean()
 barplot = weather_gb.plot.bar(y=['temp_max','temp_min'])
-barplot.set_title('Seattle Weather Data, 2012-01-01 to 2015-12-31')
+barplot.set_title('Temperature vs Weather, Seattle, 2012-01-01 to 2015-12-31')
+barplot.set_ylabel('Temperature (C)')
 plt.savefig('barplot.png')
 plt.close()
 
